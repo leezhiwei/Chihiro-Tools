@@ -95,7 +95,7 @@ int main(int argc, char* argv[]) {
     void* p = (char*)&buffer[length - queue];
   
 #ifdef OPENSSL
-    des_key_schedule sched;
+    DES_key_schedule sched;
     int result = DES_set_key((const_DES_cblock*)key, &sched);
     DES_ecb_encrypt((const_DES_cblock*)p, (DES_cblock*)p, &sched, DES_DECRYPT);
 #else
