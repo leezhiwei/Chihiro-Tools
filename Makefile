@@ -8,8 +8,8 @@ LIBS = -D OPENSSL -lcrypto
 
 all: $(PROGS)
 
-# Added additional nostartfiles, and g flag to get rid of linker error
+# Added additional nostartfiles, and g flag to get rid of linker error, for extract-fatx.c
 %: %.c
-	$(CC) $(CFLAGS) -o $@ $< $(if $(filter $@,decrypt), $(LIBS),) -nostartfiles -g
+	$(CC) $(CFLAGS) -o $@ $< $(if $(filter $@,decrypt), $(LIBS),) 
 clean: 
 	rm -f $(PROGS)
