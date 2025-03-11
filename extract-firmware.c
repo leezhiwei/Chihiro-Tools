@@ -1,3 +1,4 @@
+#include <stdint.h>
 typedef struct {
   uint8_t segaboot[0xA0000]; //TODO: Union with xbeHeader etc. The xbe header seems to be broken though, it also uses custom keys (however, for games the xbox keys are used again)
   uint8_t resources[0x44000]; //mbrom files(?)
